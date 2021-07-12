@@ -2,9 +2,10 @@ import javax.management.loading.MLetMBean;
 import java.util.Scanner;
 import static java.lang.Math.sqrt;
 public class work3 {
-    Scanner input = new Scanner(System.in);
-    //не собран
-    //первая задача
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        //не собран
+        //первая задача
 
 
         /*float a=0f, b=0f,sum=0;
@@ -122,9 +123,10 @@ public class work3 {
         c = sqrt(c);
         System.out.println("гипатинуза равна ="+c);
         */
-    // надеюсь , что утром успею залить это на гитхаб
-    // разделю на разные папки к среде (надеюсь)
+        // надеюсь , что утром успею залить это на гитхаб
+        // разделю на разные папки к среде (надеюсь)
 
+    }
 }
 
 
