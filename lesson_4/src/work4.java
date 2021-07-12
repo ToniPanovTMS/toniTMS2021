@@ -163,35 +163,7 @@ public class work4 {
         }
         return lenghs;
     }
-    public static int inputValidation() {
-        boolean mainus = true;
-        Scanner scanner = new Scanner(System.in);
-        int namber = 0;
-        String str = "";
-        str = scanner.next();
 
-        char[] CharArray = str.toCharArray();
-        if(str==""){
-            return 0;
-        }
-        for(int i = 0; i < CharArray.length; ++i) {
-            if (CharArray[i] == '-' && i == 0) {
-                mainus = true;
-            } else if (CharArray[i] <= '9' && '0' <= CharArray[i]) {
-                namber *= 10;
-                namber += CharArray[i] - 48;
-            } else {
-                System.out.println("нужно ввести  любое число ");
-                namber = inputValidation();
-            }
-        }
-
-        if (mainus) {
-            namber *= -1;
-        }
-
-        return namber;
-    }
     public static int[][] inputArrey(int[][] arrey) {
         new Scanner(System.in);
         System.out.println("Введите размерность матрици");
