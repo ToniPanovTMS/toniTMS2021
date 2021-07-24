@@ -20,7 +20,7 @@ public class work4 {
         new Scanner(System.in);
 
         while (notrue) {
-            System.out.println("\n1)\tВвести новый массив;\n        2)\tЗадание 1;\n        3)\tВывод массива;\n        4)\tЗадиние 2;\n        0)\tВыход.");
+            System.out.println("\n1)\tзадание 1\n2)\tЗадание 2;\n3)\tзадание 3(не совсем работает);\n0)\tВыход.");
             int switch1 = inputValidation();
             switch (switch1) {
                 case 0:
@@ -46,8 +46,10 @@ public class work4 {
         return notrue;
     }
     public static void zadacha1(){
+        Scanner input = new Scanner(System.in);
         //это у нас задача на анёбы
-        int anyba =1,hour=0;
+        int anyba =1,hour=24;
+        hour=input.nextInt();
         //анёба делится наждые 3 часа , значит если делится на 3 без остатка , будет часом деления
         //по условию задачи у нас время в алоть до 24 часов
         for (int i = 0; i < 24; i++) {
@@ -60,7 +62,7 @@ public class work4 {
     }
     public static void zadacha2(){
         Scanner input = new Scanner(System.in);
-        int a,b;
+        int a,b,sum=0;
         boolean mainus=false;
         System.out.println("введите первое число");
         a = input.nextInt();
@@ -71,23 +73,36 @@ public class work4 {
 
             a*=-1;
             b*=-1;
-        }else if(a<0){
-            a*=-1;
+        }else if(a<0||b<0){
             mainus=true;
-        }else if(b<0){
-            b*=-1;
-            mainus=true;
+            if(a<0){
+                a*=-1;
+            }
+            if(b<0){
+                b*=-1;
+            }
         }
         //проверили на выходной минус
+        if(b==0){
+            System.out.println("результат умножения равен 0");
+        }else if(b==1){
+            if(mainus){
+                a*=-1;
+            }
+            System.out.println("результат умножения равен "+a);
+        }else {
 
-        for (int i = 0; i <b; i++) {
+            for (int i = 0; i<b; i++) {
 
-            a+=a;
+                sum+=a;
+            }
+            if(mainus){
+                sum*=-1;
+            }
+            System.out.println("результат умножения равен "+sum);
         }
-        if(mainus){
-            a*=-1;
-        }
-        System.out.println("результат умножения равен "+a);
+
+
         return;
 
     }
@@ -179,6 +194,16 @@ public class work4 {
 
         return arrey;
     }
+    public static int inputValidation(){
+        Scanner sc = new Scanner(System.in); // создаём объект класса Scanner
+        int namber=1;
 
+        if(sc.hasNextInt()) { // возвращает истинну если с потока ввода можно считать целое число
+            namber = sc.nextInt(); // считывает целое число с потока ввода и сохраняем в переменную
 
+        } else {
+            System.out.println("Вы ввели не целое число");
+        }
+        return namber;
+    }
 }
